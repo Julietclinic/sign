@@ -1,14 +1,226 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>我的連結頁</title>
-</head>
-<body>
-  <h1>常用連結</h1>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>網路預約系統</title>
 
-  <a href="https://google.com">Google</a><br>
-  <a href="https://github.com">GitHub</a><br>
-  <a href="https://chatgpt.com">ChatGPT</a><br>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Microsoft JhengHei",sans-serif;
+    }
+
+    body{
+      background:#f8f8f8;
+      color:#222;
+    }
+
+    /* ===== Header ===== */
+    .header{
+      width:100%;
+      padding:20px 40px;
+      background:#fff;
+      border-bottom:1px solid #ddd;
+
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    .logo{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+
+    .logo-main{
+      font-size:48px;
+      font-weight:700;
+      letter-spacing:2px;
+    }
+
+    .logo-sub{
+      font-size:12px;
+      color:#666;
+    }
+
+    .title{
+      font-size:38px;
+      font-weight:700;
+    }
+
+    /* ===== Main ===== */
+    .container{
+      max-width:1300px;
+      margin:80px auto;
+      padding:0 30px;
+
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:50px;
+    }
+
+    /* ===== Card ===== */
+    .clinic-card{
+      background:#fff;
+      border:2px solid #e5e5e5;
+      min-height:600px;
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+
+      transition:0.25s;
+    }
+
+    .clinic-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* 診所圖示 */
+    .clinic-icon{
+      width:110px;
+      margin-bottom:35px;
+    }
+
+    .clinic-name{
+      font-size:44px;
+      font-weight:700;
+      margin-bottom:60px;
+    }
+
+    /* 按鈕 */
+    .reserve-btn{
+      width:260px;
+      height:70px;
+
+      border:none;
+      border-radius:999px;
+
+      background:#ef9d93;
+      color:#fff;
+
+      font-size:32px;
+      font-weight:700;
+
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    .reserve-btn:hover{
+      background:#ea887c;
+      transform:scale(1.03);
+    }
+
+    /* ===== 手機版 ===== */
+    @media(max-width:768px){
+
+      .header{
+        padding:20px;
+        gap:15px;
+      }
+
+      .logo-main{
+        font-size:32px;
+      }
+
+      .title{
+        font-size:26px;
+      }
+
+      .container{
+        margin-top:40px;
+      }
+
+      .clinic-card{
+        min-height:450px;
+      }
+
+      .clinic-name{
+        font-size:32px;
+      }
+
+      .reserve-btn{
+        width:220px;
+        height:60px;
+        font-size:26px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+
+    <!-- 左上LOGO -->
+    <div class="logo">
+      <div class="logo-main">JUCIC+</div>
+      <div class="logo-sub">
+        Juliet Breast Medical Group
+      </div>
+    </div>
+
+    <div class="title">
+      網路預約系統
+    </div>
+
+  </div>
+
+  <!-- Main -->
+  <div class="container">
+
+    <!-- 中科 -->
+    <div class="clinic-card">
+
+      <!-- 診所圖 -->
+      <img
+        class="clinic-icon"
+        src="https://cdn-icons-png.flaticon.com/512/2967/2967350.png"
+      >
+
+      <div class="clinic-name">
+        中科茱麗葉診所
+      </div>
+
+      <button
+        class="reserve-btn"
+        onclick="location.href='https://google.com'"
+      >
+        預約掛號
+      </button>
+
+    </div>
+
+    <!-- 惠文 -->
+    <div class="clinic-card">
+
+      <img
+        class="clinic-icon"
+        src="https://cdn-icons-png.flaticon.com/512/2967/2967350.png"
+      >
+
+      <div class="clinic-name">
+        惠文茱麗葉診所
+      </div>
+
+      <button
+        class="reserve-btn"
+        onclick="location.href='https://google.com'"
+      >
+        預約掛號
+      </button>
+
+    </div>
+
+  </div>
+
 </body>
 </html>
