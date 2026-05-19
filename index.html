@@ -128,7 +128,7 @@
 
       border-radius: 30px;
 
-      min-height: 650px;
+      min-height: 720px;
 
       display: flex;
       flex-direction: column;
@@ -173,14 +173,27 @@
 
       font-weight: 700;
 
-      margin-bottom: 50px;
+      margin-bottom: 40px;
 
       color: #4f3e31;
 
       text-align: center;
     }
 
-    /* ===== 掛號按鈕 ===== */
+    /* ===== 按鈕區 ===== */
+
+    .button-group {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 18px;
+
+      align-items: center;
+    }
+
+    /* ===== 共用按鈕 ===== */
 
     .reserve-btn {
 
@@ -196,7 +209,7 @@
 
       color: #fff;
 
-      font-size: 32px;
+      font-size: 30px;
 
       font-weight: 700;
 
@@ -212,6 +225,30 @@
       background: #b89578;
 
       transform: scale(1.04);
+    }
+
+    /* LINE 按鈕 */
+
+    .line-btn {
+
+      background: #8fb996;
+    }
+
+    .line-btn:hover {
+
+      background: #79a580;
+    }
+
+    /* 交通資訊按鈕 */
+
+    .map-btn {
+
+      background: #d4b59e;
+    }
+
+    .map-btn:hover {
+
+      background: #c39f84;
     }
 
     /* ===== 手機版 ===== */
@@ -276,7 +313,7 @@
 
         font-size: 34px;
 
-        margin-bottom: 30px;
+        margin-bottom: 28px;
       }
 
       .reserve-btn {
@@ -285,7 +322,12 @@
 
         height: 58px;
 
-        font-size: 26px;
+        font-size: 24px;
+      }
+
+      .button-group {
+
+        gap: 14px;
       }
     }
 
@@ -306,7 +348,7 @@
       <!-- LOGO -->
 
       <img
-        src="logo3.png"
+        src="logo.png"
         class="logo-img"
       >
 
@@ -351,12 +393,38 @@
         惠文茱麗葉診所
       </div>
 
-      <button
-        class="reserve-btn"
-        onclick="location.href='https://pinmed.co/clinic/mjfc85z1/his-booking/form'"
-      >
-        預約掛號
-      </button>
+      <!-- 按鈕群組 -->
+
+      <div class="button-group">
+
+        <!-- 預約掛號 -->
+
+        <button
+          class="reserve-btn"
+          onclick="location.href='https://pinmed.co/clinic/mjfc85z1/his-booking/form'"
+        >
+          預約掛號
+        </button>
+
+        <!-- 交通資訊 -->
+
+        <button
+          class="reserve-btn map-btn"
+          onclick="location.href='https://breastmedical.com/news-detail.php?NID=32'"
+        >
+          交通資訊
+        </button>
+
+        <!-- 官方LINE -->
+
+        <button
+          class="reserve-btn line-btn"
+          onclick="location.href='https://lin.ee/uC3DTiN'"
+        >
+          官方Line@
+        </button>
+
+      </div>
 
     </div>
 
@@ -373,12 +441,38 @@
         中科茱麗葉診所
       </div>
 
-      <button
-        class="reserve-btn"
-        onclick="location.href='https://pinmed.co/clinic/1d0omy2e/his-booking/form'"
-      >
-        預約掛號
-      </button>
+      <!-- 按鈕群組 -->
+
+      <div class="button-group">
+
+        <!-- 預約掛號 -->
+
+        <button
+          class="reserve-btn"
+          onclick="location.href='https://pinmed.co/clinic/1d0omy2e/his-booking/form'"
+        >
+          預約掛號
+        </button>
+
+        <!-- 交通資訊 -->
+
+        <button
+          class="reserve-btn map-btn"
+          onclick="location.href='https://breastmedical.com/news-detail.php?NID=31'"
+        >
+          交通資訊
+        </button>
+
+        <!-- 官方LINE -->
+
+        <button
+          class="reserve-btn line-btn"
+          onclick="location.href='https://lin.ee/Rtyms4Z'"
+        >
+          官方Line@
+        </button>
+
+      </div>
 
     </div>
 
