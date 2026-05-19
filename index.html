@@ -1,281 +1,345 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>網路預約系統</title>
 
   <style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:"Microsoft JhengHei",sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Microsoft JhengHei", sans-serif;
     }
 
-    body{
-      background:#f6f1eb;
-      color:#3e3128;
+    body {
+      background: #f6f1eb;
+      color: #3e3128;
     }
 
     /* ===== Header ===== */
 
-    .header{
-      width:100%;
-      background:#fffaf6;
-      border-bottom:1px solid #e8ddd2;
+    .header {
 
-      padding:18px 40px;
+      width: 100%;
 
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+      background: #fffaf6;
 
-      position:sticky;
-      top:0;
-      z-index:100;
+      border-bottom: 1px solid #e8ddd2;
 
-      box-shadow:0 2px 10px rgba(0,0,0,0.03);
+      padding: 18px 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
 
-    .header-left{
-      display:flex;
-      align-items:center;
-      gap:20px;
+    .header-left {
+
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
-    /* LOGO */
-    .logo-img{
-      height:62px;
-      width:auto;
+    /* ===== LOGO ===== */
+
+    .logo-img {
+
+      height: 62px;
+      width: auto;
     }
 
-    /* 標題 */
-    .title{
-      font-size:38px;
-      font-weight:700;
-      letter-spacing:2px;
-      color:#5a4638;
+    /* ===== 標題 ===== */
+
+    .title {
+
+      font-size: 38px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      color: #5a4638;
     }
 
-    /* 回首頁按鈕 */
+    /* ===== HOME BUTTON ===== */
 
-    .home-btn{
-      height:50px;
-      padding:0 24px;
+    .home-btn {
 
-      border:none;
-      border-radius:14px;
+      border: none;
 
-      background:#c8a98d;
-      color:#fff;
+      background: transparent;
 
-      font-size:20px;
-      font-weight:700;
+      cursor: pointer;
 
-      cursor:pointer;
-      transition:0.25s;
+      transition: 0.2s;
 
-      display:flex;
-      align-items:center;
-      gap:10px;
-
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .home-btn:hover{
-      background:#b89578;
-      transform:translateY(-2px);
+    .home-btn:hover {
+
+      transform: scale(1.08);
+
+      opacity: 0.85;
     }
 
-    /* ===== Main ===== */
+    .home-icon {
 
-    .container{
-      max-width:1500px;
-      margin:70px auto;
-      padding:0 35px;
+      height: 52px;
 
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
+      width: auto;
+    }
+
+    /* ===== MAIN ===== */
+
+    .container {
+
+      max-width: 1500px;
+
+      margin: 70px auto;
+
+      padding: 0 35px;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 40px;
     }
 
     /* ===== 卡片 ===== */
 
-    .clinic-card{
-      background:#fffaf6;
+    .clinic-card {
 
-      border-radius:28px;
+      background: #fffaf6;
 
-      min-height:650px;
+      border-radius: 30px;
 
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+      min-height: 650px;
 
-      padding:45px;
+      display: flex;
+      flex-direction: column;
 
-      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+      align-items: center;
+      justify-content: center;
 
-      transition:0.25s;
+      padding: 45px;
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+      transition: 0.25s;
     }
 
-    .clinic-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 18px 40px rgba(0,0,0,0.08);
+    .clinic-card:hover {
+
+      transform: translateY(-6px);
+
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
     }
 
-    /* 診所圖片 */
+    /* ===== 診所圖片 ===== */
 
-    .clinic-icon{
-      width:100%;
-      max-width:420px;
-      height:320px;
+    .clinic-icon {
 
-      object-fit:contain;
+      width: 100%;
 
-      margin-bottom:40px;
+      max-width: 420px;
+
+      height: 320px;
+
+      object-fit: contain;
+
+      margin-bottom: 40px;
     }
 
-    /* 診所名稱 */
+    /* ===== 診所名稱 ===== */
 
-    .clinic-name{
-      font-size:52px;
-      font-weight:700;
+    .clinic-name {
 
-      margin-bottom:50px;
+      font-size: 52px;
 
-      color:#4f3e31;
+      font-weight: 700;
 
-      text-align:center;
+      margin-bottom: 50px;
+
+      color: #4f3e31;
+
+      text-align: center;
     }
 
-    /* 按鈕 */
+    /* ===== 掛號按鈕 ===== */
 
-    .reserve-btn{
-      width:270px;
-      height:72px;
+    .reserve-btn {
 
-      border:none;
-      border-radius:999px;
+      width: 270px;
 
-      background:#c8a98d;
-      color:#fff;
+      height: 72px;
 
-      font-size:32px;
-      font-weight:700;
+      border: none;
 
-      cursor:pointer;
-      transition:0.2s;
+      border-radius: 999px;
 
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      background: #c8a98d;
+
+      color: #fff;
+
+      font-size: 32px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
-    .reserve-btn:hover{
-      background:#b89578;
-      transform:scale(1.04);
+    .reserve-btn:hover {
+
+      background: #b89578;
+
+      transform: scale(1.04);
     }
 
     /* ===== 手機版 ===== */
 
-    @media(max-width:900px){
+    @media(max-width:900px) {
 
-      .header{
-        padding:14px 16px;
+      .header {
+
+        padding: 14px 16px;
       }
 
-      .header-left{
-        gap:12px;
+      .header-left {
+
+        gap: 12px;
       }
 
-      .logo-img{
-        height:46px;
+      .logo-img {
+
+        height: 46px;
       }
 
-      .title{
-        font-size:24px;
+      .title {
+
+        font-size: 24px;
       }
 
-      .home-btn{
-        height:42px;
-        padding:0 14px;
-        font-size:16px;
+      .home-icon {
+
+        height: 40px;
       }
 
-      /* 手機改上下排列 */
+      /* 手機版改上下排列 */
 
-      .container{
-        grid-template-columns:1fr;
-        gap:28px;
+      .container {
 
-        margin:35px auto;
-        padding:0 16px;
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        margin: 35px auto;
+
+        padding: 0 16px;
       }
 
-      .clinic-card{
-        min-height:auto;
-        padding:30px 20px;
+      .clinic-card {
+
+        min-height: auto;
+
+        padding: 30px 20px;
       }
 
-      .clinic-icon{
-        max-width:260px;
-        height:auto;
+      .clinic-icon {
 
-        margin-bottom:25px;
+        max-width: 260px;
+
+        height: auto;
+
+        margin-bottom: 25px;
       }
 
-      .clinic-name{
-        font-size:34px;
-        margin-bottom:30px;
+      .clinic-name {
+
+        font-size: 34px;
+
+        margin-bottom: 30px;
       }
 
-      .reserve-btn{
-        width:220px;
-        height:58px;
-        font-size:26px;
+      .reserve-btn {
+
+        width: 220px;
+
+        height: 58px;
+
+        font-size: 26px;
       }
     }
 
   </style>
+
 </head>
 
 <body>
 
   <!-- Header -->
+
   <div class="header">
 
     <!-- 左側 -->
+
     <div class="header-left">
 
       <!-- LOGO -->
+
       <img
         src="logo.png"
         class="logo-img"
       >
 
       <!-- 標題 -->
+
       <div class="title">
         網路預約系統
       </div>
 
     </div>
 
-    <!-- 回首頁 -->
+    <!-- HOME -->
+
     <button
       class="home-btn"
-      onclick="location.href='首頁網址自己放'"
+      onclick="location.href='https://breastmedical.com/'"
     >
-      回首頁
+
+      <img
+        src="home.png"
+        class="home-icon"
+      >
+
     </button>
 
   </div>
 
   <!-- Main -->
+
   <div class="container">
 
-    <!-- 惠文 -->
+    <!-- 惠文診所 -->
+
     <div class="clinic-card">
 
       <img
@@ -296,7 +360,8 @@
 
     </div>
 
-    <!-- 中科 -->
+    <!-- 中科診所 -->
+
     <div class="clinic-card">
 
       <img
@@ -320,4 +385,5 @@
   </div>
 
 </body>
+
 </html>
