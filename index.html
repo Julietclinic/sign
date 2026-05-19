@@ -6,6 +6,7 @@
   <title>網路預約系統</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -14,95 +15,153 @@
     }
 
     body{
-      background:#f8f8f8;
-      color:#222;
+      background:#f6f1eb;
+      color:#3e3128;
     }
 
     /* ===== Header ===== */
+
     .header{
       width:100%;
-      padding:20px 40px;
-      background:#fff;
-      border-bottom:1px solid #ddd;
+      background:#fffaf6;
+      border-bottom:1px solid #e8ddd2;
+
+      padding:18px 40px;
 
       display:flex;
       align-items:center;
-      gap:25px;
+      justify-content:space-between;
+
+      position:sticky;
+      top:0;
+      z-index:100;
+
+      box-shadow:0 2px 10px rgba(0,0,0,0.03);
     }
 
-    .logo{
+    .header-left{
       display:flex;
-      flex-direction:column;
-      line-height:1.1;
+      align-items:center;
+      gap:20px;
     }
 
-    .logo-main{
-      font-size:48px;
-      font-weight:700;
-      letter-spacing:2px;
+    /* LOGO */
+    .logo-img{
+      height:62px;
+      width:auto;
     }
 
-    .logo-sub{
-      font-size:12px;
-      color:#666;
-    }
-
+    /* 標題 */
     .title{
       font-size:38px;
       font-weight:700;
+      letter-spacing:2px;
+      color:#5a4638;
+    }
+
+    /* 回首頁按鈕 */
+
+    .home-btn{
+      height:50px;
+      padding:0 24px;
+
+      border:none;
+      border-radius:14px;
+
+      background:#c8a98d;
+      color:#fff;
+
+      font-size:20px;
+      font-weight:700;
+
+      cursor:pointer;
+      transition:0.25s;
+
+      display:flex;
+      align-items:center;
+      gap:10px;
+
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .home-btn:hover{
+      background:#b89578;
+      transform:translateY(-2px);
     }
 
     /* ===== Main ===== */
+
     .container{
-      max-width:1300px;
-      margin:80px auto;
-      padding:0 30px;
+      max-width:1500px;
+      margin:70px auto;
+      padding:0 35px;
 
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-      gap:50px;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
     }
 
-    /* ===== Card ===== */
+    /* ===== 卡片 ===== */
+
     .clinic-card{
-      background:#fff;
-      border:2px solid #e5e5e5;
-      min-height:600px;
+      background:#fffaf6;
+
+      border-radius:28px;
+
+      min-height:650px;
 
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
 
+      padding:45px;
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+
       transition:0.25s;
     }
 
     .clinic-card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transform:translateY(-6px);
+      box-shadow:0 18px 40px rgba(0,0,0,0.08);
     }
 
-    /* 診所圖示 */
+    /* 診所圖片 */
+
     .clinic-icon{
-      width:330px;
-      margin-bottom:35px;
+      width:100%;
+      max-width:420px;
+      height:320px;
+
+      object-fit:contain;
+
+      margin-bottom:40px;
     }
+
+    /* 診所名稱 */
 
     .clinic-name{
-      font-size:44px;
+      font-size:52px;
       font-weight:700;
-      margin-bottom:60px;
+
+      margin-bottom:50px;
+
+      color:#4f3e31;
+
+      text-align:center;
     }
 
     /* 按鈕 */
+
     .reserve-btn{
-      width:260px;
-      height:70px;
+      width:270px;
+      height:72px;
 
       border:none;
       border-radius:999px;
 
-      background:#ef9d93;
+      background:#c8a98d;
       color:#fff;
 
       font-size:32px;
@@ -110,44 +169,71 @@
 
       cursor:pointer;
       transition:0.2s;
+
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
     }
 
     .reserve-btn:hover{
-      background:#ea887c;
-      transform:scale(1.03);
+      background:#b89578;
+      transform:scale(1.04);
     }
 
     /* ===== 手機版 ===== */
-    @media(max-width:768px){
+
+    @media(max-width:900px){
 
       .header{
-        padding:20px;
-        gap:15px;
+        padding:14px 16px;
       }
 
-      .logo-main{
-        font-size:32px;
+      .header-left{
+        gap:12px;
+      }
+
+      .logo-img{
+        height:46px;
       }
 
       .title{
-        font-size:26px;
+        font-size:24px;
       }
 
+      .home-btn{
+        height:42px;
+        padding:0 14px;
+        font-size:16px;
+      }
+
+      /* 手機改上下排列 */
+
       .container{
-        margin-top:40px;
+        grid-template-columns:1fr;
+        gap:28px;
+
+        margin:35px auto;
+        padding:0 16px;
       }
 
       .clinic-card{
-        min-height:450px;
+        min-height:auto;
+        padding:30px 20px;
+      }
+
+      .clinic-icon{
+        max-width:260px;
+        height:auto;
+
+        margin-bottom:25px;
       }
 
       .clinic-name{
-        font-size:32px;
+        font-size:34px;
+        margin-bottom:30px;
       }
 
       .reserve-btn{
         width:220px;
-        height:60px;
+        height:58px;
         font-size:26px;
       }
     }
@@ -160,44 +246,34 @@
   <!-- Header -->
   <div class="header">
 
-    <!-- 左上LOGO -->
-    <div class="logo">
-      <div class="logo-main">JUCIC+</div>
-      <div class="logo-sub">
-        Juliet Breast Medical Group
+    <!-- 左側 -->
+    <div class="header-left">
+
+      <!-- LOGO -->
+      <img
+        src="logo.png"
+        class="logo-img"
+      >
+
+      <!-- 標題 -->
+      <div class="title">
+        網路預約系統
       </div>
+
     </div>
 
-    <div class="title">
-      網路預約系統
-    </div>
+    <!-- 回首頁 -->
+    <button
+      class="home-btn"
+      onclick="location.href='首頁網址自己放'"
+    >
+      回首頁
+    </button>
 
   </div>
 
   <!-- Main -->
   <div class="container">
-
-    <!-- 中科 -->
-    <div class="clinic-card">
-
-      <!-- 診所圖 -->
-      <img
-        class="clinic-icon"
-        src="55555.png"
-      >
-
-      <div class="clinic-name">
-        中科茱麗葉診所
-      </div>
-
-      <button
-        class="reserve-btn"
-        onclick="location.href='https://pinmed.co/clinic/1d0omy2e/his-booking/form'"
-      >
-        預約掛號
-      </button>
-
-    </div>
 
     <!-- 惠文 -->
     <div class="clinic-card">
@@ -214,6 +290,27 @@
       <button
         class="reserve-btn"
         onclick="location.href='https://pinmed.co/clinic/mjfc85z1/his-booking/form'"
+      >
+        預約掛號
+      </button>
+
+    </div>
+
+    <!-- 中科 -->
+    <div class="clinic-card">
+
+      <img
+        class="clinic-icon"
+        src="55555.png"
+      >
+
+      <div class="clinic-name">
+        中科茱麗葉診所
+      </div>
+
+      <button
+        class="reserve-btn"
+        onclick="location.href='https://pinmed.co/clinic/1d0omy2e/his-booking/form'"
       >
         預約掛號
       </button>
